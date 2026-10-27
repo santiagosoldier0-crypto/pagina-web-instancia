@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Horno & Miga: pan artesanal, bollería y pequeños momentos para disfrutar. Haz tu pedido y retíralo en nuestra panadería.">
+  <title>Horno & Miga · Pan hecho con tiempo</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <script defer src="{{ url_for('static', filename='app.js') }}"></script>
+</head>
+<body>
+  <div class="announcement">Hecho a mano. Horneado cada mañana. <span>Un poquito de felicidad en cada miga.</span></div>
+  <header class="header wrap">
+    <a href="#" class="brand" aria-label="Horno y Miga, inicio"><span class="brand-icon">✳</span><span>horno <i>&</i> miga<small>PANADERÍA ARTESANAL</small></span></a>
+    <nav aria-label="Navegación principal"><a href="#catalogo">Nuestro pan</a><a href="#nosotros">Nuestra esencia</a><a href="#visitanos">Visítanos</a></nav>
+    <button class="cart-button" id="open-cart">Tu pedido <span id="cart-count">0</span></button>
+  </header>
+  <main>
+    <section class="hero wrap">
+      <div class="hero-copy"><p class="eyebrow"><span></span> EL BUEN PAN NO TIENE PRISA</p><h1>La vida sabe<br>mejor con <em>pan.</em></h1><p>Masa madre, manos con oficio y el aroma de un nuevo día. Horneamos pequeños momentos para disfrutar despacio.</p><a class="button" href="#catalogo">Explorar el menú <span>↗</span></a><div class="hero-foot"><span class="tiny-wheat">❋</span><span>Ingredientes honestos.<br><strong>Siempre recién hecho.</strong></span></div></div>
+      <div class="hero-art" role="img" aria-label="Ilustración de panes artesanales sobre una mesa cálida"><div class="art-grain"></div><div class="art-caption">EL ARTE DE LO SIMPLE</div><div class="bread-shadow"></div><div class="loaf hero-loaf"><span></span><span></span><span></span></div><div class="bread-slice slice-one"></div><div class="bread-slice slice-two"></div><div class="art-stamp">100%<small>HECHO CON<br>AMOR</small></div><span class="art-bottom">Harina. Agua. Tiempo. Pasión.</span></div>
+    </section>
+    <div class="values"><div class="wrap"><span>✳ Masa madre natural</span><span>✳ Horneado a diario</span><span>✳ Ingredientes de verdad</span><span>✳ Hecho para compartir</span></div></div>
+    <section id="catalogo" class="catalog wrap"><div class="section-top"><div><p class="eyebrow">DEL HORNO A TU MESA</p><h2>Antojos de todos los días.</h2></div><p>Elige tus favoritos.<br>Nosotros ponemos el cariño.</p></div><div class="catalog-toolbar"><div class="filters" role="group" aria-label="Filtrar productos"><button class="active" data-category="Todos" aria-pressed="true">Todos</button><button data-category="Panes" aria-pressed="false">Panes</button><button data-category="Bollería" aria-pressed="false">Bollería</button><button data-category="Dulces" aria-pressed="false">Dulces</button></div><span>Preparado para retirar en tienda</span></div><div id="products" class="products" aria-live="polite"><p>Cargando el aroma del horno…</p></div></section>
+    <section class="story wrap" id="nosotros"><div class="story-symbol" aria-hidden="true">✳</div><div><p class="eyebrow">NUESTRA ESENCIA</p><h2>Las cosas buenas<br>llevan su tiempo.</h2><p>Creemos en volver a lo esencial: amasar con las manos, respetar los tiempos y llenar la mesa de cosas ricas. Cada pieza cuenta una pequeña historia de harina, paciencia y dedicación.</p></div><div class="story-note">Sin atajos.<br>Con mucha miga.<span>Así hacemos nuestro pan.</span></div></section>
+    <section id="visitanos" class="visit wrap"><div><p class="eyebrow">NOS VEMOS EN EL HORNO</p><h2>Tu próxima pausa,<br>con olor a pan.</h2></div><div><h3>Retiro en tienda</h3><p>Lunes a sábado · 07:00 a 19:00<br>Domingos · 08:00 a 13:00</p><p class="muted">Panadería de demostración académica.<br>Los pedidos no implican un cobro real.</p></div></section>
+  </main>
+  <footer class="wrap"><a class="footer-brand" href="#">horno & miga</a><span>Hecho con tiempo y con cariño.</span><span>Proyecto académico · 2026</span></footer>
+  <dialog id="cart-dialog" aria-labelledby="cart-title"><div class="dialog-heading"><div><p class="eyebrow">DE NUESTRO HORNO</p><h2 id="cart-title">Tu pedido</h2></div><button class="icon-button" id="close-cart" aria-label="Cerrar pedido">✕</button></div><div id="cart-items"></div><div class="cart-total"><span>Total</span><strong id="cart-total">$0.00</strong></div><p class="muted">Retiro en tienda · Pago al retirar · USD</p><form id="checkout"><label>Tu nombre<input name="name" required minlength="2" maxlength="80" autocomplete="name" placeholder="¿A nombre de quién?"></label><label>Teléfono<input name="phone" type="tel" required minlength="7" maxlength="25" autocomplete="tel" placeholder="099 123 4567"></label><label>Indicaciones <span class="muted">(opcional)</span><textarea name="notes" maxlength="500" rows="2" placeholder="Algo que debamos saber…"></textarea></label><p id="checkout-message" role="status"></p><button class="button checkout-button" type="submit">Confirmar pedido <span>↗</span></button></form></dialog>
+  <div class="toast" id="toast" role="status"></div>
+</body>
+</html>
